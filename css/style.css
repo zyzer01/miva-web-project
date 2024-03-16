@@ -58,6 +58,20 @@ h3 {
   background: linear-gradient(45deg, #e673ba, #6a97fa, #adc4f6);
 }
 
+.free {
+  font-size: 30px;
+  width: 50%;
+  font-weight: 300;
+}
+.freedom {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+}
+.icons {
+  font-size: 40px;
+  color: orange;
+}
 footer {
   margin-top: auto;
   padding: 10px 40px;
