@@ -8,18 +8,15 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-
+a {
+  text-decoration: none;
+}
 .container {
   margin: 0, auto;
   padding: 50px 170px 50px;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  color: #e673ba;
-  transition: all 0.3s ease-in-out;
+p {
+  color: #5e5e5e;
 }
 nav {
   display: flex;
@@ -28,18 +25,34 @@ nav {
   padding: 10px;
   border-bottom: 1px solid #d8d8d875;
 }
-nav img {
-  width: 40px;
+nav ul,
+.social-links {
+  gap: 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+nav ul > li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+nav ul > li a:hover {
+  color: #fc5c7d;
+  transition: all 0.3s ease-in-out;
+}
+nav ul .logo {
+  width: 30px;
+  color: #e673ba;
 }
 .hero-container {
   text-align: center;
 }
 h3 {
-  color: #e673ba;
+  color: #fc5c7d;
 }
 .gradient-heading {
   font-size: 20px;
-  background: linear-gradient(45deg, #e673ba, #6a97fa, #adc4f6);
+  background: linear-gradient(to right, #fc5c7d, #6a97fa);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,13 +62,14 @@ h3 {
   font-size: 55px;
 }
 .hero-btn {
+  cursor: pointer;
   margin-top: 20px;
   font-size: 16px;
   border: 1px solid white;
   border-radius: 50px;
   color: white;
   padding: 15px 35px;
-  background: linear-gradient(45deg, #e673ba, #6a97fa, #adc4f6);
+  background: linear-gradient(to right, #fc5c7d, #6a97fa);
 }
 
 .free {
@@ -69,14 +83,155 @@ h3 {
   gap: 5%;
 }
 .icons {
-  font-size: 40px;
+  width: 50px;
   color: orange;
 }
+
+.about {
+  margin-top: 100px;
+}
+.about h2 {
+  font-size: 40px;
+}
+
+.about .company-desc {
+  margin-top: -10px;
+  padding-right: 150px;
+}
+
+.contact-buttons {
+  margin-top: 35px;
+}
+
+.first-button {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 20px 35px;
+  background-color: #e673ba;
+  margin-right: 10px;
+}
+.second-button {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  padding: 20px 35px;
+  background-color: #dadada;
+}
+
+.first-button:hover,
+.second-button:hover {
+  opacity: 0.9;
+}
+#contact {
+  margin-top: 80px;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+}
+
 footer {
   margin-top: auto;
   padding: 10px 40px;
   display: flex;
   justify-content: space-between;
+}
+
+/* Form */
+.form-container {
+  max-width: 40rem;
+  width: 40dvw;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.form-row label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 10px;
+}
+
+.form-container input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+.input-group {
+  flex: auto;
+  flex-direction: column;
+}
+
+.form-container textarea {
+  height: 150px;
+  width: 100%;
+  resize: vertical;
+}
+
+.form-container .submit-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  font-size: 1rem;
+  font-weight: bold;
+  transition: opacity 0.3s ease-out;
+}
+
+.form-container .submit-button:hover {
+  opacity: 0.9;
+}
+
+.adjust-freedom {
+  align-items: center;
+}
+
+.adjust-free {
+  font-weight: 500;
+  width: 100%;
+}
+
+.email {
+  font-weight: 500;
+  color: #e673ba;
+  margin-right: 20px;
+}
+
+.number {
+  font-weight: 500;
 }
 
 /* 
@@ -91,6 +246,12 @@ Responsiveness
     margin: 0, auto;
     padding: 50px;
   }
+  .adjust-freedom {
+    flex-direction: column;
+  }
+  .form-container {
+    width: 80dvw;
+  }
 }
 
 /* Tablet Screen */
@@ -102,6 +263,13 @@ Responsiveness
   .hero-heading {
     padding: 0px;
     font-size: 35px;
+  }
+  .flex-container {
+    display: block;
+  }
+  .free {
+    font-size: 25px;
+    width: 100%;
   }
 }
 
